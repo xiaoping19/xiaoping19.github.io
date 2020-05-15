@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-	<head>
+        <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimal-ui" />
-    <title>第一篇文章 | 小桌子</title>
+    <title>小桌子</title>
 <link rel='stylesheet' id='puma-css'  href='https://xiaoping19.github.io/styles/main.css' type='text/css' media='screen' />
 <link rel='stylesheet' id='puma-css'  href='https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css' media='screen' />
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -13,7 +13,7 @@
          <script >hljs.initHighlightingOnLoad();</script>
          
 </head>
-<body class="single single-post postid-3788 single-format-standard">
+<body class="home blog">
 	<!--加入跟随滑动的顶部-->
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
@@ -27,7 +27,7 @@
 		</a>
 		
 	</header>
-		<div class="site-navigation-wrapper">
+    	<div class="site-navigation-wrapper">
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<ul class="primary-nav">
                     
@@ -44,28 +44,84 @@
 		</nav>			
 	</div>
 	<!--跟随滑动的顶部结束-->
+	<!--大屏banner开始-->
+	
+	<div class="site-banner u-textAlignCenter hasImage" style="background-image:url()">
+		<div class="fade-cover"></div>
+		<div class="banner-txt">
+			<h2>小桌子</h2>
+		</div>
+		<div class="banner-txt">
+			<p>设计博客</p>
+		</div>	
+	</div>
+	<!--大屏banner结束-->
+	<div class="site-main">
 	<div class="surface-content">    <main class="main-content">
-        <section class="section-body">
-                            <header class="section-header u-textAlignCenter">
-                    <h2 class="grap--h2">第一篇文章</h2>
-                    <div class="block-postMetaWrap">
-                        <time>2019-07-18</time>
-                    </div>
-                </header>
-                <div class="grap">
-					  <p class="with-img"><img width="1139" height="759" src="https://xiaoping19.github.io/post-images/di-yi-pian-wen-zhang.png" class="attachment-full size-full wp-post-image" alt="第一篇文章" /></p>
-					<p>我写了一篇文章</p>
+        <section class="blockGroup">
+                
+            <article class="block block--inset block--list">
+    <h2 class="block-title post-featured" itemprop="headline">
+        <a href="https://xiaoping19.github.io/post/hello-gridea/">Hello Gridea</a>
+    </h2>
+    <div class="block-postMetaWrap u-textAlignCenter">
+        <time>2018-12-12</time>
+    </div>
+    <div class="block-snippet block-snippet--subtitle grap" itemprop="about">
+            
+                    <p class="with-img"><img width="1139" height="759" src="https://xiaoping19.github.io/post-images/hello-gridea.png" class="attachment-full size-full wp-post-image" alt="Hello Gridea" /></p>
+                    
+                    <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 
-                </div>
+                <p class="u-textAlignCenter"><a class="more-link" href="https://xiaoping19.github.io/post/hello-gridea/" title="Hello Gridea">READ MORE</a></p>
+    </div>
+    <div class="block-footer">
+        In  <a href="https://xiaoping19.github.io/tag/35RbNavgp/" rel="category tag">Gridea</a>.  
+        <div class="block-footer-inner">
+                2 min read .
+        </div>
+    </div>
+</article>
 
-                <div class="post--keywords" itemprop="keywords">
-					 <a href="https://xiaoping19.github.io/tag/nen0pOlyh/" class="post--keyword" data-title="article" data-type="post_tag" data-term-id="39">article</a>           </div>
+</section>
 
-
-
-                      </section>
     </main>
-</div>
+</div></div>
+<script type="text/javascript">
+//点击加载更多
+jQuery(document).ready(function($) {
+    //点击下一页的链接(即那个a标签)
+    $(' .button').click(function() {
+        $this = $(this);
+        $this.addClass('loading').text('正在努力加载'); //给a标签加载一个loading的class属性，用来添加加载效果
+        var href = $this.attr('href'); //获取下一页的链接地址
+        if (href != undefined) { //如果地址存在
+            $.ajax({ //发起ajax请求
+                url: href,
+                //请求的地址就是下一页的链接
+                type: 'get',
+                //请求类型是get
+                error: function(request) {
+                    //如果发生错误怎么处理
+                },
+                success: function(data) { //请求成功
+                    $this.removeClass('loading').text('点击查看更多'); //移除loading属性
+                    var $res = $(data).find('.block--list '); //从数据中挑出文章数据，请根据实际情况更改
+                    $('.blockGroup').append($res.fadeIn(500)); //将数据加载加进posts-loop的标签中。
+                    var newhref = $(data).find(' .button').attr('href'); //找出新的下一页链接
+                    if (newhref != undefined) {
+                        $('.button').attr('href', newhref);
+                    } else {
+                        $('.button').remove(); //如果没有下一页了，隐藏
+                    }
+                }
+            });
+        }
+        return false;
+    });
+});
+</script>
 	<footer class="site-footer u-textAlignCenter">
     	<div class="footer-branding">
             <a href="https://xiaoping19.github.io" title="小桌子">小桌子</a>
