@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiaoping19.github.io</id>
-    <title>小桌子</title>
-    <updated>2020-05-18T08:13:48.189Z</updated>
+    <title>PING</title>
+    <updated>2020-05-18T08:15:01.303Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiaoping19.github.io"/>
     <link rel="self" href="https://xiaoping19.github.io/atom.xml"/>
     <subtitle>设计博客</subtitle>
     <logo>https://xiaoping19.github.io/images/avatar.png</logo>
     <icon>https://xiaoping19.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 小桌子</rights>
+    <rights>All rights reserved 2020, PING</rights>
     <entry>
         <title type="html"><![CDATA[第一篇文章]]></title>
         <id>https://xiaoping19.github.io/post/di-yi-pian-wen-zhang/</id>
